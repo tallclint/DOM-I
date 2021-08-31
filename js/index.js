@@ -40,3 +40,65 @@ const siteContent = {
 // Example: Update the img src for the logo
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
+
+const header = document.querySelector('header');
+
+const navItemArray = Array.from(document.querySelectorAll('nav a'));
+const nav = siteContent.nav;
+let index = 0;
+for (const key in nav)
+{
+    if (key.includes("nav-item-"))
+        navItemArray[index++].textContent = nav[key];
+}
+const h1 = document.querySelector('h1');
+h1.innerHTML = "DOM <br> Is <br> Awesome";
+
+let cta = document.getElementById('cta-img');
+cta.setAttribute('src', "img/header-img.png");
+
+const buttonGetStarted = document.querySelector('.cta button');
+buttonGetStarted.textContent = "Get Started";
+
+const h4 = document.querySelectorAll('h4');
+h4[0].textContent = siteContent["main-content"]["features-h4"];
+h4[1].textContent = siteContent["main-content"]["about-h4"];
+h4[2].textContent = siteContent["main-content"]["services-h4"];
+h4[3].textContent = siteContent["main-content"]["product-h4"];
+h4[4].textContent = siteContent["main-content"]["vision-h4"];
+h4[5].textContent = siteContent["contact"]["contact-h4"];
+
+
+const p = document.querySelectorAll('p');
+p[0].textContent = siteContent['main-content']["features-content"];
+p[1].textContent = siteContent["main-content"]["about-content"];
+p[2].textContent = siteContent["main-content"]["services-content"];
+p[3].textContent = siteContent["main-content"]["product-content"];
+p[4].textContent = siteContent["main-content"]["vision-content"];
+p[5].innerHTML = "123 Way 456 Street <br> Somewhere, USA";
+p[6].textContent = siteContent["contact"]["phone"];
+p[7].textContent = siteContent["contact"]["email"];
+p[8].textContent = siteContent["footer"]["copyright"];
+
+const midImg = document.getElementById("middle-img");
+midImg.setAttribute('src', siteContent["main-content"]["middle-img-src"]);
+
+const tallClint = document.createElement('a');
+tallClint.textContent = 'tallclint';
+tallClint.href = '#';
+document.querySelector('nav').prepend(tallClint);
+
+const blog = document.createElement('a');
+blog.textContent = 'Blog';
+blog.href = '#';
+document.querySelector('nav').appendChild(blog);
+
+const aTag = document.querySelectorAll('nav a')
+
+aTag[0].textContent = siteContent['nav']['nav-item-1'];
+aTag[1].textContent = siteContent['nav']['nav-item-2'];
+aTag[2].textContent = siteContent['nav']['nav-item-3'];
+aTag[3].textContent = siteContent['nav']['nav-item-4'];
+aTag[4].textContent = siteContent['nav']['nav-item-5'];
+aTag[5].textContent = siteContent['nav']['nav-item-6'];
+aTag.forEach(tag =>{tag.style.color = "green"});
